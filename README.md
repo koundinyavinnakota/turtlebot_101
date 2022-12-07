@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-# obstacle-avoidance-turtlebot3
+# turtlebot_101
 
 ## This is a simple obstacle avoidance program using turtlebot3 in ROS2 (Humble), simulated in Gazebo   
 
