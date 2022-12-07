@@ -37,14 +37,7 @@ class bot_control : public rclcpp::Node {
 
     //Creating a publisher for bot control
     botPublisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 1);
-    // mover_.linear.x = 0;   /// Linear velocity in X direction 0
-    // mover_.linear.y = 0;   /// Linear velocity in Y direction 0
-    // mover_.linear.z = 0;   /// Linear velocity in Z direction 0
-    // mover_.angular.x = 0;  /// Angular velocity in X direction 0
-    // mover_.angular.y = 0;  /// Angular velocity in Y direction 0
-    // mover_.angular.z = 0;  /// Angular velocity in Z direction 0
-    // timer_ = this->create_wall_timer(500ms, std::bind(&bot_control::timer_callback, this));
-    // botPublisher_->publish(mover_);
+   
     RCLCPP_INFO(this->get_logger(),"Obstacle flag : %d",thresholdCroseed);
   
   }
