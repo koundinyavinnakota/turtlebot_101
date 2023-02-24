@@ -26,7 +26,7 @@ source /opt/ros/humble/setup.bash
 ### Clone the repository
 ```
 cd <ros2 workspace folder>/src
-git clone https://github.com/Madhunc5229/obstacle-avoidance-turtlebot3.git
+git clone https://github.com/koundinyavinnakota/turtlebot_101.git
 ```
 
 ### Build the package using colcon
