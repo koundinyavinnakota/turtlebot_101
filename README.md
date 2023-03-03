@@ -10,7 +10,8 @@
 - colcon
 - rosdep
 - turtlebot3
-
+## To install ROS2 Humble please follow the instructions in the below link
+https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
 ## Install turtlebot package 
 - If you have already installed turtlebot3 for ros2, please skip this step
 - The following is debian package install for turtlebot3
@@ -26,7 +27,7 @@ source /opt/ros/humble/setup.bash
 ### Clone the repository
 ```
 cd <ros2 workspace folder>/src
-git clone https://github.com/koundinyavinnakota/turtlebot_101.git
+https://github.com/koundinyavinnakota/turtlebot_101.git
 ```
 
 ### Build the package using colcon
@@ -39,11 +40,23 @@ colcon build --packages-select bot_control
 ```
 source install/setup.bash
 ```
-## Launching the package
+## Launching the package to view the autonomous movement of the bot
 - Launch the turtlebot3 and the bot_node which subscribes to `"/scan"` topic and publishes to `"/cmd_vel"` topic
 - Please note that there is parameter `record` which has to be set to either true or false to record rosbad files for 30 seconds
 ```
 ros2 launch bot_control launch.launch record:=true
+```
+## To move the bot using teleop keys 
+Open a new terminal
+Navigate to the ros2 workspace
+```
+source install/setup.bash
+ros2 launch bot_control teleop_launch.launch
+```
+Now open a new terminal
+```
+source /opt/ros/humble/setup.bash
+ros2 run turtlebot3_teleop teleop_keyboard
 ```
 ## Rosbag 
 - To inspect the rosbag file, run the following
@@ -66,3 +79,5 @@ cpplint --filter=-build/c++11,+build/c++17,-build/name,-build/include_order,-run
 ```
 cppcheck --enable=all --std=c++17 src/ --suppress=missingIncludeSystem --suppress=unmatchedSuppression --suppress=unusedFunction --suppress=missingInclude --suppress=useInitializationList > results/cppcheck.txt
 ```
+## To watch the simulation video of turtlebot navigation
+https://youtu.be/mMPSrXsvX4M
